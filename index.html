@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote-Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=jacinto.design">
+    <!-- instant fa load content delivery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quote-cont" id="quote-cont">
+        <!-- quote -->
+        <div class="quote-text">
+            <i class="fas fa-quote-left"></i>
+            <!-- doesnt take space other than txt span -->
+            <span id="quote"></span>
+            <!-- Author -->
+            <div class="quote-author">
+                <span id="author">Buddha</span>
+            </div>
+            <!-- Buttons -->
+            <div class="btn-cont">
+                <button class="twitter-btn" id="twitter" title="Tweet This!">
+                    <i class="fab fa-twitter"></i>
+                </button>
+                <button id="new-quote">New Quote</button>
+            </div>
+        </div>
+    </div>
+    <!-- loader -->
+    <div class="loader" id="loader"></div>
+    <!-- Script -->
+    <script src="quotes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
