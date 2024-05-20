@@ -5,22 +5,23 @@ const twitterBtn=document.getElementById('twitter');
 const newQuoteBtn=document.getElementById('new-quote');
 const loader=document.getElementById('loader');
 let apiQuotes=[];
+let localQuoteArr=[];
+let callQuoteFirstTime=true;
 
-//show loading
 function loading(){
     loader.hidden=false;
     quoteContainer.hidden=true;
 }
 
-//hide loading
 function complete(){
     quoteContainer.hidden=false;
     loader.hidden=true;
 }
 
-function newQuote(){
+function newLocalQuote(){
+    console.log('from local quote');
     loading();
-    const quote =apiQuotes[0];
+    const quote =localQuoteArr[Math.floor(Math.random()*localQuoteArr.length)];
     const author=quote.author;
     authorText.textContent=author;
     quoteText.textContent=quote.content;
@@ -37,19 +38,44 @@ function newQuote(){
     complete();
 }
 
+const getQuote=()=>{
+    loading();
+    const quote = apiQuotes[Math.floor(Math.random()*apiQuotes.length)];
+    const indexOfQuote = apiQuotes.findIndex((qe)=>qe._id===quote._id);
+    authorText.textContent=quote.author;
+    quoteText.textContent=quote.content;
+    if(quote.content.length>80){
+        quoteText.classList.add('long-quote');
+    }else{
+        quoteText.classList.remove('long-quote');
+    }
+    if(quote.content.length>170){
+        quoteText.classList.add('longer-text');
+    }else{
+        quoteText.classList.remove('longer-text');
+    }
+    apiQuotes.splice(indexOfQuote,1);
+    if(apiQuotes.length<1){
+        getQuotes();
+    }
+    complete();
+}
 
 async function getQuotes(){
-    loading();
     const apiUrl ='https://api.quotable.io/quotes/random';
     try{
-        const resp =await fetch(apiUrl);
-        console.log('using fetch api');
-        apiQuotes = await resp.json();
-        newQuote();
+        for(let i=0;i<10;i++){
+         const resp =await fetch(apiUrl);
+        const res = await resp.json();
+        apiQuotes.push(...res);
+    }
+    skipper();
+    callQuoteFirstTime=false;
     }catch(e){
-        apiQuotes=localQuotes;
+        alert('something went wrong dont worry click ok to view the limited quotes which are stored in the application');
+        localQuoteArr=localQuotes;
         console.log('using local array');
-        newQuote();
+        newLocalQuote();
     }
 }
 
@@ -58,9 +84,24 @@ function tweetQuote(){
     window.open(twitterUrl,'_blank');
 }
 
-newQuoteBtn.addEventListener('click',getQuotes);
+newQuoteBtn.addEventListener('click',()=>{
+    if(localQuoteArr.length>0){
+        newLocalQuote();
+    }else{
+        getQuote();
+    }
+})
+
 twitterBtn.addEventListener('click',tweetQuote);
 
+const skipper=()=>{
+    if(callQuoteFirstTime){
+        getQuote();
+    }
+}
+
 window.onload=()=>{
+    loading();
     getQuotes();
 }
+
