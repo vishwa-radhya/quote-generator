@@ -1,66 +1,66 @@
 let localQuotes=[
     {
-      "text": "Genius is one percent inspiration and ninety-nine percent perspiration.",
-      "author": "Thomas Edison, type.fit"
+      "content": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+      "author": "Thomas Edison"
     },
     {
-      "text": "You can observe a lot just by watching.",
-      "author": "Yogi Berra, type.fit"
-    },
-    {
-      "text": "A house divided against itself cannot stand.",
-      "author": "Abraham Lincoln, type.fit"
-    },
-    {
-      "text": "Difficulties increase the nearer we get to the goal.",
-      "author": "Johann Wolfgang von Goethe, type.fit"
-    },
-    {
-      "text": "Fate is in your hands and no one elses",
-      "author": "Byron Pulsifer, type.fit"
-    },
-    {
-      "text": "Be the chief but never the lord.",
-      "author": "Lao Tzu, type.fit"
-    },
-    {
-      "text": "Nothing happens unless first we dream.",
-      "author": "Carl Sandburg, type.fit"
-    },
-    {
-      "text": "Well begun is half done.",
-      "author": "Aristotle, type.fit"
-    },
-    {
-      "text": "Life is a learning experience, only if you learn.",
+      "content": "You can observe a lot just by watching.",
       "author": "Yogi Berra"
     },
     {
-      "text": "Self-complacency is fatal to progress.",
-      "author": "Margaret Sangster, type.fit"
+      "content": "A house divided against itself cannot stand.",
+      "author": "Abraham Lincoln"
     },
     {
-      "text": "Peace comes from within. Do not seek it without.",
-      "author": "Buddha, type.fit"
+      "content": "Difficulties increase the nearer we get to the goal.",
+      "author": "Johann Wolfgang von Goethe"
     },
     {
-      "text": "What you give is what you get.",
-      "author": "Byron Pulsifer, type.fit"
+      "content": "Fate is in your hands and no one elses",
+      "author": "Byron Pulsifer"
     },
     {
-      "text": "We can only learn to love by loving.",
-      "author": "Iris Murdoch, type.fit"
+      "content": "Be the chief but never the lord.",
+      "author": "Lao Tzu"
     },
     {
-      "text": "Life is change. Growth is optional. Choose wisely.",
-      "author": "Karen Clark, type.fit"
+      "content": "Nothing happens unless first we dream.",
+      "author": "Carl Sandburg"
     },
     {
-      "text": "You'll see it when you believe it.",
-      "author": "Wayne Dyer, type.fit"
+      "content": "Well begun is half done.",
+      "author": "Aristotle"
     },
     {
-      "text": "Today is the tomorrow we worried about yesterday.",
-      "author":  "type.fit"
+      "content": "Life is a learning experience, only if you learn.",
+      "author": "Yogi Berra"
+    },
+    {
+      "content": "Self-complacency is fatal to progress.",
+      "author": "Margaret Sangster"
+    },
+    {
+      "content": "Peace comes from within. Do not seek it without.",
+      "author": "Buddha"
+    },
+    {
+      "content": "What you give is what you get.",
+      "author": "Byron Pulsifer"
+    },
+    {
+      "content": "We can only learn to love by loving.",
+      "author": "Iris Murdoch"
+    },
+    {
+      "content": "Life is change. Growth is optional. Choose wisely.",
+      "author": "Karen Clark"
+    },
+    {
+      "content": "You'll see it when you believe it.",
+      "author": "Wayne Dyer"
+    },
+    {
+      "content": "Today is the tomorrow we worried about yesterday.",
+      "author":  "Unknown"
     }
   ]

@@ -36,6 +36,10 @@ font-family: "Platypi", serif;
     font-size: 2rem;
 }
 
+.longer-text{
+    font-size: 1.4rem;
+}
+
 .fa-quote-left{
     font-size: 4rem;
 }

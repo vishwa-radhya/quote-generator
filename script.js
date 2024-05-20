@@ -20,36 +20,33 @@ function complete(){
 
 function newQuote(){
     loading();
-    const quote =apiQuotes[Math.floor(Math.random()* apiQuotes.length)];
-    const author=quote.author.replace(/, type.fit|type.fit/,'');
-    if(author){
-        authorText.textContent=author;
-    }else{
-        authorText.textContent='Unknown';
-    }
-    if(quote.text.length>120){
+    const quote =apiQuotes[0];
+    const author=quote.author;
+    authorText.textContent=author;
+    quoteText.textContent=quote.content;
+    if(quote.content.length>80){
         quoteText.classList.add('long-quote');
     }else{
         quoteText.classList.remove('long-quote');
     }
-
-    quoteText.textContent=quote.text;
+    if(quote.content.length>170){
+        quoteText.classList.add('longer-text');
+    }else{
+        quoteText.classList.remove('longer-text');
+    }
     complete();
 }
 
 
 async function getQuotes(){
     loading();
-    const apiUrl ='https://type.fit/api/quotes';
+    const apiUrl ='https://api.quotable.io/quotes/random';
     try{
         const resp =await fetch(apiUrl);
         console.log('using fetch api');
-        
         apiQuotes = await resp.json();
         newQuote();
-        // throw new Error('oops')
     }catch(e){
-        // alert(e);
         apiQuotes=localQuotes;
         console.log('using local array');
         newQuote();
@@ -61,7 +58,7 @@ function tweetQuote(){
     window.open(twitterUrl,'_blank');
 }
 
-newQuoteBtn.addEventListener('click',newQuote);
+newQuoteBtn.addEventListener('click',getQuotes);
 twitterBtn.addEventListener('click',tweetQuote);
 
 window.onload=()=>{
